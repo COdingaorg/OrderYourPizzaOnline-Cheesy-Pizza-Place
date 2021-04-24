@@ -1,0 +1,4 @@
+/*styling first option of select group*/
+.select-group:focus option:first-of-type{
+  display: none;
+}
