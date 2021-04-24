@@ -3,6 +3,6 @@
   display: none;
 }
 /*hide delivery selection*/
-#selectDelivery, .error, #addPopup{
+#selectDelivery, .error, #addPopup, #seeOrder{
   display: none;
 }

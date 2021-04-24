@@ -100,21 +100,29 @@ $(document).ready(function(){
   $('#checkout').click(function(event){  
     event.preventDefault();                     
     //calculate delivery
-    var delivery = $('input#delivery').val();
+    var delivery = $('input[name="delivery"]:checked').val();
     var deliveryPrice = function(){
       if(delivery == 'delivery'){
         return 350
       }else if(delivery == 'no-delivery'){
+        $('.location').hide()
         return 0
       }
     }
+    //checking if location is added
+
     var totalAmount = deliveryPrice()+pizzaTotal;
-    var location = $('input#location').val()
+    var location = $('input#location').val();
+    if(delivery=='delivery'&&(location==null||location=='')){
+      alert('Please enter a location')
+    };
     //display total at checkout
 
-      $('#orderSummary').append('<p>Your Delivery will be done to'+'<h3>'+location+'</h3>in 30 minutes</p>')
-      $('#totalAmount').append('<p> Delivery cost'+deliveryPrice()+'</p>'+'<h1>TOTAL AMOUNT '+totalAmount+'</h1>'+
+      $('#deliveryDetails').append('<p>Your Delivery will be done to : '+'<h3>'+location+'</h3>in 30 minutes</p>')
+      $('#totalAmount').append('<p> Delivery cost : '+deliveryPrice()+'</p>'+'<h1>TOTAL AMOUNT :'+totalAmount+'</h1>'+
                                 '<p>Thank you for shopping with us..</p>')
+      $('#checkout').hide();
+      $('#seeOrder').show();                  
   })    
   }) 
 })

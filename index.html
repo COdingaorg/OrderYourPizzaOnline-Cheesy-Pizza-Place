@@ -57,17 +57,17 @@
     <div id="delivery">
       <h3>Would you like it delivered to your place at 350/=?</h3>
       <label><input type="radio" name="delivery" id="delivery" value="delivery" checked>Yes</label>
-      <label><input type="radio" name="delivery" id="delivery" value="no-delivery">No</label>
-      <label>Enter your Location<input type="text" name="location" id="location"></label>
+      <label><input type="radio" name="delivery" id="delivery" value="no-delivery">No</label><br>
+      <span class="location">Enter your Location<input type="text" name="location" id="location"></span>
     </div>
     <button type="submit" id="checkout">Checkout</button>
   </form>
 
   </form>
   <div id="orderSummary"></div>
-
+  <div id="deliveryDetails"></div>
   <div id="totalAmount"></div>
-
+  <button type="button" id="seeOrder">SEE ORDER</button>
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
     crossorigin="anonymous"></script>
   <script src="JS/scripts.js"></script>
