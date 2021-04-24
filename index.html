@@ -47,7 +47,18 @@
       <button type="submit" class="col-md-3" aria-placeholder="SUBMIT">SUBMIT</button>
     </div>
   </form>
-  
+  <form id="selectDelivery">
+    <div id="delivery" class="col-md-5">
+      <h3>Would you like it delivered to your place?</h3>
+      <label><input type="checkbox" name="delivery" id="delivery" value="delivery" checked>Yes</label>
+      <label><input type="checkbox" name="delivery" id="delivery" value="no-delivery">No</label>
+      <label>Enter your Location<input type="text" name="location" id="location"></label>
+    </div>
+    <button type="submit" id="checkout">Checkout</button>
+  </form>
+  <div id="orderSummary"></div>
+
+  <div id="totalAmount"></div>
 
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
     crossorigin="anonymous"></script>
