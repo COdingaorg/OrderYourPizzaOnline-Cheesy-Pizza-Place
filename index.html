@@ -1,16 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" href="CSS/styles.css">
   <title>Cheesy Pizza Shop</title>
 </head>
+
 <body>
+  <div id="banner">
+    <h1>Welcome to Cheesy Pizza Place</h1>
+  </div>
+  <div id="order">
+    <h2>Place your Order</h2>
+  </div>
+  <form action="#">
+    <div class="row">
+      <label for="Size" class="col-md-4">Choose Your Size</label>
+      <input type="select" name="size" id="size" class="col-md-7">
+      <optgroup label="size">
+        <option value="small">Small</option>
+        <option value="medium">Medium</option>
+        <option value="large">Large</option>
+      </optgroup>
+    </div>
+    <div class="row">
+      <label for="topping" class="col-md-4">Select Toppings</label>
+      <label>Chicken<input type="checkbox" name="topping" id="topping" value="chicken" class="col-md-7"></label>
+      <label>Beef<input type="checkbox" name="topping" id="topping" value="beef" class="col-md-7"></label>
+      <label>Pork<input type="checkbox" name="topping" id="topping" value="pork" class="col-md-7"></label>
+    </div>
+    <div class="row">
+      <label for="Size" class="col-md-4">What Crust do you like</label>
+      <input type="select" name="crust" id="crust" class="col-md-7">
+      <optgroup label="crust">
+        <option value="crisp">Crisp</option>
+        <option value="stuffed">Stuffed</option>
+        <option value="gluten-free">Gluten-Free</option>
+      </optgroup>
+    </div>
+    <div class="row">
+      <button type="submit" class="col-md-3" aria-placeholder="SUBMIT">SUBMIT</button>
+    </div>
+  </form>
   
-  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
   <script src="JS/scripts.js"></script>
 </body>
+
 </html>
