@@ -86,7 +86,17 @@ $(document).ready(function(){
                                 '<h5>Toppings: </h5><p>' +pizzaTopping+ '</p>' +
                                 '<h5>Crust Type: </h5><p>' +pizzaCrust+ '</p>' +
                                 '<h4>SUB-TOTAL</h4>'+pizzaTotal+'</div>')
-
+    //show popup for adding another order
+    $('#addPopup').show();
+    $('#anotherOne').click(function(){
+      var anotherAns = $("input[name='anotherOrder']:checked").val();
+      if(anotherAns == 'addYes'){
+        $('#addPopup').hide();
+      }else if(anotherAns =='addNo'){
+        $('#addPopup').hide();
+        $('#selectDelivery').show();
+      }else($('.error').show())
+    })
   $('#checkout').click(function(event){  
     event.preventDefault();                     
     //calculate delivery

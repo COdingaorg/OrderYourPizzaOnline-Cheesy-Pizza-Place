@@ -2,3 +2,7 @@
 .select-group:focus option:first-of-type{
   display: none;
 }
+/*hide delivery selection*/
+#selectDelivery, .error, #addPopup{
+  display: none;
+}
