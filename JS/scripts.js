@@ -75,12 +75,23 @@ function Pizza(size, price){
   this.Toppings = [];
   this.Crusts = [];
 }
-
+//get total price for a selected pizza
+Pizza.prototype.pizzaTotal = function(){
+  return (pizzaSelect.Price+pizzaSelect.Toppings[0].Price+pizzaSelect.Crusts[0].Price)
+}
+//get crust type
+Pizza.prototype.pizzaCrust = function(){
+  return (pizzaSelect.Crusts[0].Type)
+}
+//get topping chosen
+Pizza.prototype.pizzaTopping = function(){
+  return (pizzaSelect.Toppings[0].Name)
+}
 //user Logic
 // $(document).ready(function(){
 //   $('form#pizzaorder').submit(function(){
     //Collencting input from form
-    var pizzesize = 'small';//$('select#size').val();
+    var pizzasize = 'small';//$('select#size').val();
     var pizzatopping = 'beef'//$('input#topping').val();
     var pizzacrust = 'crisp'//$('select#crust').val();
     //determine crust price
@@ -107,9 +118,34 @@ function Pizza(size, price){
       }
     }//create topping object
     var toppingSelect = new Topping(pizzatopping, topPrice())
+    
+    //create Pizza object
+    //determince pizza price
+    var pizzaPrice = function(){
+      if(pizzasize == 'small'){
+        return 180
+      }else if(pizzasize == 'medium'){
+        return 220
+      }else if(pizzasize == 'large'){
+        return 330
+      }
+    }
+    var pizzaSelect = new Pizza(pizzasize, pizzaPrice())
 
-    $('#banner').click(function(){
-      $('#testOutput').append(toppingSelect.Price)
-    })
+    //add toppings and crust objects to Pizza object
+    pizzaSelect.Toppings.push(toppingSelect);
+    pizzaSelect.Crusts.push(crustSelect);
+
+    //show order to HTML
+    $('#orderSummary').append('<h3>Pizza Selected : </h3><p>'+pizzaSelect.Size+'</p>'+
+                              '<h3>Toppings: </h3><p>'+pizzaTopping()+'</p>'+
+                              '<h3>Crust Type: </h3><p>'+pizzaCrust()+'</p>'+
+                              '<h2>SUB-TOTAL'+pizzaTotal)
+      
+    console.log(pizzaSelect);
+    console.log(pizzaTotal);
+    // $('#banner').click(function(){
+    //   $('#testOutput').append(pizzaSelect.Toppings[0])
+    // })
 //   })
 // })
