@@ -77,3 +77,39 @@ function Pizza(size, price){
 }
 
 //user Logic
+// $(document).ready(function(){
+//   $('form#pizzaorder').submit(function(){
+    //Collencting input from form
+    var pizzesize = 'small';//$('select#size').val();
+    var pizzatopping = 'beef'//$('input#topping').val();
+    var pizzacrust = 'crisp'//$('select#crust').val();
+    //determine crust price
+    var crustPrice = function(){
+      if(pizzacrust == 'crisp'){
+        return 120
+      }else if(pizzacrust == 'stuffed'){
+        return 190
+      }else if(pizzacrust == 'glutenFree'){
+        return 220
+      }
+    }
+    //create objects using construct
+    var crustSelect = new Crust(pizzacrust, crustPrice())
+    
+    //determine toppings price
+    var topPrice = function(){
+      if(pizzatopping == 'chicken'){
+        return 200
+      }else if(pizzatopping == 'beef'){
+        return 250
+      }else if(pizzatopping == 'pork'){
+        return 320
+      }
+    }//create topping object
+    var toppingSelect = new Topping(pizzatopping, topPrice())
+
+    $('#banner').click(function(){
+      $('#testOutput').append(toppingSelect.Price)
+    })
+//   })
+// })
