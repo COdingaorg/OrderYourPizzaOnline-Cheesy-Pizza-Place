@@ -22,7 +22,18 @@ function Pizza  (size, price) {
   this.Toppings = [];
   this.Crusts = [];
 }
-
+//get total price for a selected pizza
+ Pizza.prototype.pizzaTotal = function(){
+  return (this.Price + this.Toppings[0].Price + this.Crusts[0].Price)
+}
+ //get crust type
+ Pizza.prototype.pizzaCrust = function(){
+   return (this.Crusts[0].Type)
+ }
+ //get topping chosen
+ Pizza.prototype.pizzaTopping = function(){
+   return (this.Toppings[0].Name)
+ }
 //user Logic
 $(document).ready(function(){
   $('form#pizzaorder').submit(function(event){
@@ -72,20 +83,18 @@ $(document).ready(function(){
    //add toppings and crust objects to Pizza object
     pizzaSelect.Toppings.push(toppingSelect);
     pizzaSelect.Crusts.push(crustSelect);
-        
-    //get total price for a selected pizza
-    var pizzaTotal = (pizzaSelect.Price + pizzaSelect.Toppings[0].Price + pizzaSelect.Crusts[0].Price)
-    //get crust type
-    var pizzaCrust = (pizzaSelect.Crusts[0].Type)
-    //get topping chosen
-    var pizzaTopping = (pizzaSelect.Toppings[0].Name)
+    
+   
      
          
     //show order to HTML
+    if(pizzaSelect.Size=='select size'||pizzSelect.pizzaCrust()=='Choose crust type'){
+      alert('Select a valid option');
+    }
       $('#orderSummary').append('<div class="summaries"><h5>Pizza Selected : </h5><p>' +pizzaSelect.Size+ '</p>' +
-                                '<h5>Toppings: </h5><p>' +pizzaTopping+ '</p>' +
-                                '<h5>Crust Type: </h5><p>' +pizzaCrust+ '</p>' +
-                                '<h4>SUB-TOTAL</h4>'+pizzaTotal+'</div>')
+                                '<h5>Toppings: </h5><p>' +pizzapizzaSelect.pizzaTopping()+ '</p>' +
+                                '<h5>Crust Type: </h5><p>' +pizzSelect.pizzaCrust()+ '</p>' +
+                                '<h4>SUB-TOTAL</h4>'+pizzaSelect.pizzaTotal()+'</div>')
     //show popup for adding another order
     $('#addPopup').show();
     $('#anotherOne').click(function(){
@@ -109,15 +118,17 @@ $(document).ready(function(){
         return 0
       }
     }
-    //checking if location is added
+    //incase of multiple pizza orders, find a total price for all pizzas
+    var allPizzaTotal = pizzaSelect.each(function(){
 
-    var totalAmount = deliveryPrice()+pizzaTotal;
+    })
+    var totalAmount = deliveryPrice()+(pizzaSelect.pizzaTotal());
     var location = $('input#location').val();
+    //checking if location is added
     if(delivery=='delivery'&&(location==null||location=='')){
       alert('Please enter a location')
     };
     //display total at checkout
-
       $('#deliveryDetails').append('<p>Your Delivery will be done to : '+'<h3>'+location+'</h3>in 30 minutes</p>')
       $('#totalAmount').append('<p> Delivery cost : '+deliveryPrice()+'</p>'+'<h1>TOTAL AMOUNT :'+totalAmount+'</h1>'+
                                 '<p>Thank you for shopping with us..</p>')
