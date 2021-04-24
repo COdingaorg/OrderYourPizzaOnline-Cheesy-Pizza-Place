@@ -18,43 +18,39 @@
   <div id="order">
     <h2>Place your Order</h2>
   </div>
-  <form action="#">
-    <div class="row">
-      <label for="Size" class="col-md-4">Choose Your Size</label>
-      <input type="select" name="size" id="size" class="col-md-7">
+  <form id="pizzaorder">
+    <label for="Size">Select Your Size:</label>
+    <select name="size" id="size">
       <optgroup label="size">
         <option value="small">Small</option>
         <option value="medium">Medium</option>
         <option value="large">Large</option>
       </optgroup>
-    </div>
-    <div class="row">
-      <label for="topping" class="col-md-4">Select Toppings</label>
-      <label>Chicken<input type="checkbox" name="topping" id="topping" value="chicken" class="col-md-7"></label>
-      <label>Beef<input type="checkbox" name="topping" id="topping" value="beef" class="col-md-7"></label>
-      <label>Pork<input type="checkbox" name="topping" id="topping" value="pork" class="col-md-7"></label>
-    </div>
-    <div class="row">
-      <label for="Size" class="col-md-4">What Crust do you like</label>
-      <input type="select" name="crust" id="crust" class="col-md-7">
+    </select><br>
+    <label for="Topping">Choose your Toppings:</label>
+    Chicken<input type="radio" name="topping" id="topping" value="chicken">
+    Beef<input type="radio" name="topping" id="topping" value="beef">
+    Pork<input type="radio" name="topping" id="topping" value="pork"><br>
+    <label for="Size" class="">What Crust do you like</label>
+    <select name="crust" id="crust" class="">
       <optgroup label="crust">
         <option value="crisp">Crisp</option>
         <option value="stuffed">Stuffed</option>
         <option value="gluten-free">Gluten-Free</option>
       </optgroup>
-    </div>
-    <div class="row">
-      <button type="submit" class="col-md-3" aria-placeholder="SUBMIT">SUBMIT</button>
-    </div>
+    </select><br>
+    <button type="submit" aria-placeholder="SUBMIT">SUBMIT</button>
   </form>
   <form id="selectDelivery">
-    <div id="delivery" class="col-md-5">
+    <div id="delivery">
       <h3>Would you like it delivered to your place?</h3>
       <label><input type="checkbox" name="delivery" id="delivery" value="delivery" checked>Yes</label>
       <label><input type="checkbox" name="delivery" id="delivery" value="no-delivery">No</label>
       <label>Enter your Location<input type="text" name="location" id="location"></label>
     </div>
     <button type="submit" id="checkout">Checkout</button>
+  </form>
+
   </form>
   <div id="orderSummary"></div>
 
