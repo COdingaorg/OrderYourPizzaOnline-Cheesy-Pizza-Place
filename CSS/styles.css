@@ -40,9 +40,8 @@
 .select-group:focus option:first-of-type{
   display: none;
 }
-nav{
-  position: fixed;
-  float: top;
+nav a{
+  font-family: PierSans;
 }
 body{
   width: 98vw;
@@ -68,7 +67,7 @@ body{
   background-size: cover;
   background-position-y: 80%;
   background-repeat: no-repeat;
-  
+  box-shadow: 1px 2px 3px grey;
 }
 #banner h1{
   font-family: PierSans;
@@ -91,17 +90,22 @@ nav.navbar{
   padding-bottom: 2%;
 }
 .collect{
-  margin-bottom: 8%;
+  margin-bottom: 2%;
+}
+#topping{
+  width: 100%;
 }
 #section1 img, #section2 img{
   width: 350px;
   border: 3px solid rgba(216, 121, 4, 1);
   border-radius:0 10px 0 10px;
   box-shadow: 3px 4px 5px gray;
-  margin: 2%;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+#topping{
+  margin: 2%;
 }
 hr{
   box-shadow: 2px 2px 3px black;
@@ -128,12 +132,11 @@ select, .location>Input{
 
 }
 #addPopup{
-  position: absolute;
-  top: 90vh;
-  left: 40vw;
-  margin: auto;
-  border: 5px solid (rgba(216, 121, 4, 1));
-  background-color: rgba(114, 2, 22, 1);
+  position: relative;
+  top: -45vh;
+  left: 39vw;
+  border: 2px solid rgba(242, 159, 4, 1);
+  background-color:rgba(216, 121, 4, 1);
   width: 180px;
   padding: 1%;
   border-radius: 0 10px 0 10px;
@@ -141,8 +144,9 @@ select, .location>Input{
   font: 1.2em;
   display: none;
 }
-#addPopup>p, #addPopup>label{
+#addPopup>p, #addPopup>label, #addPopup>a{
   color: white;
+  font-family: PierSans;
 }
 #orderSummary{
  display: flex;
