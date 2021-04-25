@@ -86,10 +86,7 @@ $(document).ready(function () {
     pizzaSelect.Toppings.push(toppingSelect);
     pizzaSelect.Crusts.push(crustSelect);
     pizzaSelect.Total = (pizzaSelect.pizzaTotal())
-
-
-
-
+    
     //show order to HTML
     if (pizzaSelect.Size == 'select size' || pizzaSelect.pizzaCrust() == 'Choose crust type' || pizzaSelect.pizzaTopping() == null) {
       alert('Select a valid option');
