@@ -21,7 +21,7 @@ function Pizza(size, price) {
   this.Price = price;
   this.Toppings = [];
   this.Crusts = [];
-  this.Total= 0;
+  this.Total = 0;
 }
 //get total price for a selected pizza
 Pizza.prototype.pizzaTotal = function () {
@@ -85,20 +85,20 @@ $(document).ready(function () {
     //add toppings and crust objects to Pizza object
     pizzaSelect.Toppings.push(toppingSelect);
     pizzaSelect.Crusts.push(crustSelect);
-    pizzaSelect.Total=(pizzaSelect.pizzaTotal())
+    pizzaSelect.Total = (pizzaSelect.pizzaTotal())
 
 
 
 
     //show order to HTML
-    if (pizzaSelect.Size == 'select size' || pizzaSelect.pizzaCrust() == 'Choose crust type'||pizzaSelect.pizzaTopping()==null) {
+    if (pizzaSelect.Size == 'select size' || pizzaSelect.pizzaCrust() == 'Choose crust type' || pizzaSelect.pizzaTopping() == null) {
       alert('Select a valid option');
-    }else{
+    } else {
       $('#orderSummary').append('<div class="summaries"><h5>Pizza Selected : </h5><p>' + pizzaSelect.Size + '</p>' +
-        '<h5>Toppings: </h5><p>' + pizzaSelect.pizzaTopping() + '</p>' +
-        '<h5>Crust Type: </h5><p>' + pizzaSelect.pizzaCrust() + '</p>' +
-        '<h4>SUB-TOTAL</h4><p>'+ pizzaSelect.pizzaTotal()+'</p></div>')
-        $('.seeSummary').hide()
+                                '<h5>Toppings: </h5><p>' + pizzaSelect.pizzaTopping() + '</p>' +
+                                '<h5>Crust Type: </h5><p>' + pizzaSelect.pizzaCrust() + '</p>' +
+                                '<h4>SUB-TOTAL</h4><p>' + pizzaSelect.pizzaTotal() + '</p></div>')
+      $('.seeSummary').hide()
     }
     //show popup for adding another order
     $('#addPopup').show();
@@ -108,51 +108,51 @@ $(document).ready(function () {
         $('#addPopup').hide();
         $('input#anotherOrder').trigger('reset');
         $('#pizzaorder').trigger('reset');
-        $('.seeSummary').show() 
+        $('.seeSummary').show()
       } else if (anotherAns == 'addNo') {
         $('#addPopup').hide();
         $('#selectDelivery').show();
       } else ($('.error').show())
     })
   })
-    $('#checkout').click(function (event) {
-      event.preventDefault();
-      //calculate delivery
-      var delivery = $('input[name="delivery"]:checked').val();
-      var deliveryPrice = function () {
-        if (delivery == 'delivery') {
-          $('.location input').css('border','2px solid red')
-          locStatement += '<p>Your Delivery will be done to : '
-          return 350
-        } else if (delivery == 'no-delivery') {
-          $('.location').hide()
-          locStatement += '<p>Your Order will be ready '
-          return 0
-        }
-      } 
-      var locStatements = function(){
-        if (delivery == 'delivery') {
-        return locStatement = '<p>Your Delivery will be done to : '
+  $('#checkout').click(function (event) {
+    event.preventDefault();
+    //calculate delivery
+    var delivery = $('input[name="delivery"]:checked').val();
+    var deliveryPrice = function () {
+      if (delivery == 'delivery') {
+        $('.location input').css('border', '2px solid red')
+        locStatement += '<p>Your Delivery will be done to : '
+        return 350
       } else if (delivery == 'no-delivery') {
-       return locStatement = '<p>Your Order will be ready '
+        $('.location').hide()
+        locStatement += '<p>Your Order will be ready '
+        return 0
       }
     }
-      //incase of multiple pizza orders, find a total price for all pizzas
-      
-      var totalAmount = ($('.summaries[0] :last-child()'));
-      var location = $('input#location').val();
-      //checking if location is added
-      if (delivery == 'delivery' && (location == null || location == '')) {
-        alert('Please enter a location')
-      };
-      //display total at checkout
-      $('#deliveryDetails').append(locStatements()+'<h3>'+location+                                   '</h3>in 30 minutes</p>'+
-                                   '<p> Delivery cost : ' + deliveryPrice()+ '</p>' )
-      $('#totalAmount').append(/*'<h1>TOTAL AMOUNT :' +totalAmount+ '</h1>'*/)
-      console.log(locStatements())
-      $('#checkout').hide();
-      $('#seeOrder').show();
-      $('.thankyou').show();
-    })
-  
+    var locStatements = function () {
+      if (delivery == 'delivery') {
+        return locStatement = '<p>Your Delivery will be done to : '
+      } else if (delivery == 'no-delivery') {
+        return locStatement = '<p>Your Order will be ready '
+      }
+    }
+    //incase of multiple pizza orders, find a total price for all pizzas
+
+    var totalAmount = ($('.summaries[0] :last-child()'));
+    var location = $('input#location').val();
+    //checking if location is added
+    if (delivery == 'delivery' && (location == null || location == '')) {
+      alert('Please enter a location')
+    };
+    //display total at checkout
+    $('#deliveryDetails').append(locStatements() + '<h3>' + location + '</h3>in 30 minutes</p>' +
+                                  '<p> Delivery cost : ' + deliveryPrice() + '</p>')
+    $('#totalAmount').append('<h1>TOTAL AMOUNT :' + totalAmount + '</h1>')
+    console.log(locStatements())
+    $('#checkout').hide();
+    $('#seeOrder').show();
+    $('.thankyou').show();
+  })
+
 })

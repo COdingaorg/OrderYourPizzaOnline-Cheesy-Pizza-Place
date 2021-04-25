@@ -1,66 +1,97 @@
 /*Color CSS*/
 /* Color Theme Swatches in RGBA */
-.pizza-1-rgba { color: rgba(114, 2, 22, 1); }
-.pizza-2-rgba { color: rgba(242, 159, 4, 1); }
-.pizza-3-rgba { color: rgba(216, 121, 4, 1); }
-.pizza-4-rgba { color: rgba(242, 91, 4, 1); }
-.pizza-5-rgba { color: rgba(191, 3, 3, 1); }
+.pizza-1-rgba {
+  color: rgba(114, 2, 22, 1);
+}
+
+.pizza-2-rgba {
+  color: rgba(242, 159, 4, 1);
+}
+
+.pizza-3-rgba {
+  color: rgba(216, 121, 4, 1);
+}
+
+.pizza-4-rgba {
+  color: rgba(242, 91, 4, 1);
+}
+
+.pizza-5-rgba {
+  color: rgba(191, 3, 3, 1);
+}
+
 /*Fonts*/
-@font-face{
+@font-face {
   font-family: montserrat;
   src: url(web-fonts/Montserrat/Montserrat-Light.otf);
   font-weight: lighter, bolder;
-      }
-@font-face{
+}
+
+@font-face {
   font-family: montserrat;
   src: url(web-fonts/Montserrat/Montserrat-Bold.otf);
   font-weight: bold;
-      }
-@font-face{
+}
+
+@font-face {
   font-family: Nexa;
   src: url(web-fonts/Nexa/Nexa-Light.otf);
-      /* url(web-fonts/Nexa/Nexa-Bold.otf);*/
- }
-@font-face{
+  /* url(web-fonts/Nexa/Nexa-Bold.otf);*/
+}
+
+@font-face {
   font-family: PierSans;
   src: url(web-fonts/PierSans/PierSans-Medium.otf);
   font-weight: medium;
 }
-@font-face{
+
+@font-face {
   font-family: PierSans;
   src: url(web-fonts/PierSans/PierSans-Light.otf);
   font-weight: lighter;
 }
-*{
+
+* {
   font-family: Nexa;
   color: black;
   box-sizing: border-box;
 }
+
 /*styling first option of select group*/
-.select-group:focus option:first-of-type{
+.select-group:focus option:first-of-type {
   display: none;
 }
-nav a{
+
+nav a {
   font-family: PierSans;
 }
-body{
+
+body {
   width: 98vw;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 /*hide delivery selection*/
-#selectDelivery, .error, #addPopup, #seeOrder, .thankyou{
+#selectDelivery,
+.error,
+#addPopup,
+#seeOrder,
+.thankyou {
   display: none;
 }
+
 /*styling banner*/
-#banner, #order{
+#banner,
+#order {
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
-#banner{
+
+#banner {
   width: 100%;
   height: 60vh;
   background-image: url('../images/pizzashop.jpg');
@@ -69,18 +100,23 @@ body{
   background-repeat: no-repeat;
   box-shadow: 1px 2px 3px grey;
 }
-#banner h1{
+
+#banner h1 {
   font-family: PierSans;
   font-weight: medium;
   color: white;
 }
-nav.navbar{
+
+nav.navbar {
   color: rgba(114, 2, 22, 1);
 }
-#order{
+
+#order {
   padding-top: 1%;
 }
-#pizzaorder,#footer{
+
+#pizzaorder,
+#footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -89,40 +125,60 @@ nav.navbar{
   width: 100%;
   padding-bottom: 2%;
 }
-.collect{
+
+.collect {
   margin-bottom: 2%;
 }
-#topping{
+
+#topping {
   width: 100%;
 }
-#section1 img, #section2 img{
-  width: 350px;
+
+#section1 img,
+#section2 img {
   border: 3px solid rgba(216, 121, 4, 1);
-  border-radius:0 10px 0 10px;
+  border-radius: 0 10px 0 10px;
   box-shadow: 3px 4px 5px gray;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-#topping{
+
+#section1 img {
+  width: 300px;
+}
+
+#section2 img {
+  width: 250px;
+}
+
+#topping {
   margin: 2%;
 }
-hr{
+
+hr {
   box-shadow: 2px 2px 3px black;
 }
-button{
+
+button {
   border-radius: 5px;
   color: black;
   margin: 1%;
 }
-#display{
+
+#display {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
-a{
+
+a {
   text-decoration: none;
 }
-select, .location>Input{
+
+select,
+.location>Input {
   border-radius: 4px;
   border: 1px solid black;
   background-color: rgba(216, 121, 4, .2);
@@ -131,12 +187,13 @@ select, .location>Input{
   margin: 1%;
 
 }
-#addPopup{
+
+#addPopup {
   position: relative;
   top: -45vh;
   left: 39vw;
   border: 2px solid rgba(242, 159, 4, 1);
-  background-color:rgba(216, 121, 4, 1);
+  background-color: rgba(216, 121, 4, 1);
   width: 180px;
   padding: 1%;
   border-radius: 0 10px 0 10px;
@@ -144,46 +201,71 @@ select, .location>Input{
   font: 1.2em;
   display: none;
 }
-#addPopup>p, #addPopup>label, #addPopup>a{
+
+#addPopup>p,
+#addPopup>label,
+#addPopup>a {
   color: white;
   font-family: PierSans;
 }
-#orderSummary{
- display: flex;
- flex-direction: row;
- align-items: center;
- justify-content: space-evenly;
- flex-wrap: wrap;
+
+#orderSummary,
+.order-summary {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 
 }
-.summaries{
+
+.summaries {
   border: 1px solid black;
   border-radius: 5px 5px 0px 0px;
   width: 250px;
   line-height: 0.1em;
   text-align: center;
-  margin:10px 3px;
+  margin: 2px 3px;
   box-shadow: 2px 3px 5px gray;
   padding: 1%;
 }
-#deliveryDetails, #delivery{
+
+#deliveryDetails,
+#delivery {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
 }
+
 @media screen and (max-width: 600px) {
-  #section1>img{
+  #section1>img {
     display: none;
   }
-  #section2>img{
+
+  #section2>img {
     width: 250px;
   }
-  #display{
+
+  #display {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+  }
+
+  #addPopup {
+    position: relative;
+    top: -60vh;
+    left: 20vw;
+    border: 2px solid rgba(242, 159, 4, 1);
+    background-color: rgba(216, 121, 4, 1);
+    width: 180px;
+    padding: 1%;
+    border-radius: 0 10px 0 10px;
+    text-align: center;
+    font: 1.2em;
+    display: none;
   }
 }

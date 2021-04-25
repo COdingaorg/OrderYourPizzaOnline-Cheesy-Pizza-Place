@@ -31,7 +31,8 @@
     </div>
     <div id="order">
       <h2>Place your Order</h2>
-    </div><hr>
+    </div>
+    <hr>
     <div id="display">
       <div id="section1">
         <img src="/images/pizzadough.jpg" alt="Pizza Dough">
@@ -42,42 +43,39 @@
           <select name="size" id="size" class="select-group">
             <optgroup label="Available sizes">
               <option>select size</option>
-              <option value="small">Small</option>
-              <option value="medium">Medium</option>
-              <option value="large">Large</option>
+              <option value="small">Small--kshs 180</option>
+              <option value="medium">Medium--kshs 220</option>
+              <option value="large">Large--kshs 330</option>
             </optgroup>
           </select><br>
         </div>
         <div class="collect">
           <label for="Topping">Choose your Toppings:</label><br>
-          Chicken<input type="radio" name="topping" id="topping" value="chicken">
-          Beef<input type="radio" name="topping" id="topping" value="beef">
-          Pork<input type="radio" name="topping" id="topping" value="pork"><br>
+          Chicken--kshs 200<input type="radio" name="topping" id="topping" value="chicken">
+          Beef--kshs 250<input type="radio" name="topping" id="topping" value="beef">
+          Pork--kshs 320<input type="radio" name="topping" id="topping" value="pork"><br>
         </div>
         <div class="collect">
           <label for="Size" class="">What Crust do you like</label>
           <select name="crust" id="crust" class="select-group">
             <optgroup label="crust types">
               <option>Choose crust type</option>
-              <option value="crisp">Crisp</option>
-              <option value="stuffed">Stuffed</option>
-              <option value="glutenFree">Gluten-Free</option>
+              <option value="crisp">Crisp --kshs 120</option>
+              <option value="stuffed">Stuffed--kshs--190</option>
+              <option value="glutenFree">Gluten-Free--kshs--220</option>
             </optgroup>
           </select><br>
         </div>
         <button type="submit" class="seeSummary">SUBMIT</button>
       </form>
-      <div id="section2">
-        <img src="/images/pizzaupclose.jpg" alt="Pizza Upclose">
-      </div>
     </div>
     <form id="addPopup">
       <p>Order Received!</p>
       <p>Add another one?</p>
       <div id="anotherOne">
         <label>Yes<a href="#location"><input type="radio" name="anotherOrder" id="anotherOrder" value="addYes"></label>
-          <label>[No<input type="radio" name="anotherOrder" id="anotherOrder" value="addNo">]</label>
-          <span class="error">Please select an option</span></a>
+        <label>[No<input type="radio" name="anotherOrder" id="anotherOrder" value="addNo">]</label>
+        <span class="error">Please select an option</span></a>
       </div>
     </form>
     <div id="anotherOrder"></div>
@@ -90,7 +88,7 @@
         <a href="#footer"><button type="submit" id="checkout">Checkout</button></a>
       </div>
     </form>
-
+    <p class="order-summary">Order Summary</p>
     </form>
     <div id="orderSummary"></div>
     <div id="deliveryDetails"></div>
@@ -98,6 +96,9 @@
     <div id="footer">
       <a href="#orderSummary"><button type="button" id="seeOrder">SEE ORDER</button></a>
       <p class="thankyou">Thank you for shopping with us..</p>
+      <div id="section2">
+        <img src="/images/pizzaupclose.jpg" alt="Pizza Upclose">
+      </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.js"
       integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
