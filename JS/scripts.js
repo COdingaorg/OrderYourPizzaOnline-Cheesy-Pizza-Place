@@ -108,13 +108,10 @@ $(document).ready(function () {
         $('#addPopup').hide();
         $('input#anotherOrder').trigger('reset');
         $('#pizzaorder').trigger('reset');
-        $('.seeSummary').show()
-        return locStatement = '<p>Your Delivery will be done to : '
-        
+        $('.seeSummary').show() 
       } else if (anotherAns == 'addNo') {
         $('#addPopup').hide();
         $('#selectDelivery').show();
-        return locStatement = '<p>Your Order will be ready '
       } else ($('.error').show())
     })
   })
@@ -125,12 +122,21 @@ $(document).ready(function () {
       var deliveryPrice = function () {
         if (delivery == 'delivery') {
           $('.location input').css('border','2px solid red')
+          locStatement += '<p>Your Delivery will be done to : '
           return 350
         } else if (delivery == 'no-delivery') {
           $('.location').hide()
+          locStatement += '<p>Your Order will be ready '
           return 0
         }
       } 
+      var locStatements = function(){
+        if (delivery == 'delivery') {
+        return locStatement = '<p>Your Delivery will be done to : '
+      } else if (delivery == 'no-delivery') {
+       return locStatement = '<p>Your Order will be ready '
+      }
+    }
       //incase of multiple pizza orders, find a total price for all pizzas
       
       var totalAmount = ($('.summaries[0] :last-child()'));
@@ -140,11 +146,10 @@ $(document).ready(function () {
         alert('Please enter a location')
       };
       //display total at checkout
-      $('#deliveryDetails').append(locStatement + '<h3>' + location +
-                                   '</h3>in 30 minutes</p>'+
+      $('#deliveryDetails').append(locStatements()+'<h3>'+location+                                   '</h3>in 30 minutes</p>'+
                                    '<p> Delivery cost : ' + deliveryPrice()+ '</p>' )
       $('#totalAmount').append(/*'<h1>TOTAL AMOUNT :' +totalAmount+ '</h1>'*/)
-      console.log(totalAmount)
+      console.log(locStatements())
       $('#checkout').hide();
       $('#seeOrder').show();
       $('.thankyou').show();

@@ -5,91 +5,97 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="CSS/bootstrap.css"
-    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="CSS/bootstrap.css">
   <link rel="stylesheet" href="CSS/styles.css">
   <title>Cheeasy Pizza Shop</title>
 </head>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <span class="container-fluid">
-    <a class="navbar-brand" href="index.html">Cheeasy</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <span class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <span class="navbar-nav">
-        <a class="nav-link active" aria-current="page" href="mailto:calemasanga@gmail.com">Contact Us</a>
-      </span>
-    </span>
-  </span>
-</nav>
-<body>
-  <div id="banner">
-    <h1>Welcome to Cheeasy Pizza Place</h1>
-    <hi id="testOutput"></hi>
-  </div>
-  <div id="order">
-    <h2>Place your Order</h2>
-  </div>
-  <form id="pizzaorder">
-    <div class="collect">
-      <label for="Size">Select Your Size:</label>
-    <select name="size" id="size" class="select-group">
-      <optgroup label="Available sizes">
-        <option>select size</option>
-        <option value="small">Small</option>
-        <option value="medium">Medium</option>
-        <option value="large">Large</option>
-      </optgroup>
-    </select><br>
-    </div>
-    <div class="collect">
-    <label for="Topping">Choose your Toppings:</label>
-    Chicken<input type="radio" name="topping" id="topping" value="chicken">
-    Beef<input type="radio" name="topping" id="topping" value="beef">
-    Pork<input type="radio" name="topping" id="topping" value="pork"><br>
-    </div>
-    <div class="collect">
-    <label for="Size" class="">What Crust do you like</label>
-    <select name="crust" id="crust" class="select-group">
-      <optgroup label="crust types">
-        <option>Choose crust type</option>
-        <option value="crisp">Crisp</option>
-        <option value="stuffed">Stuffed</option>
-        <option value="glutenFree">Gluten-Free</option>
-      </optgroup>
-    </select><br>
-    </div>
-    <button type="submit" class="seeSummary">SUBMIT</button>
-  </form>
-  <form id="addPopup">
-    <p>Order Received!</p>
-    <p>Add another one?</p>
-    <div id="anotherOne">
-    Yes<input type="radio" name="anotherOrder" id="anotherOrder" value="addYes">
-    No<input type="radio" name="anotherOrder" id="anotherOrder" value="addNo">
-    <span class="error">Please select an option</span>
-    </div>
-</form>
-  <div id="anotherOrder"></div>
-  <form id="selectDelivery">
-    <div id="delivery">
-      <h3>Would you like it delivered to your place at 350/=?</h3>
-      <label><input type="radio" name="delivery" id="delivery" value="delivery" >Yes</label>
-      <label><input type="radio" name="delivery" id="delivery" value="no-delivery" checked>No</label><br>
-      <span class="location">Enter your Location<input type="text" name="location" id="location"></span>
-    </div>
-    <button type="submit" id="checkout">Checkout</button>
-  </form>
 
-  </form>
-  <div id="orderSummary"></div>
-  <div id="deliveryDetails"></div>
-  <div id="totalAmount"></div>
-  <button type="button" id="seeOrder">SEE ORDER</button>
-  <p class="thankyou">Thank you for shopping with us..</p>'
-  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-    crossorigin="anonymous"></script>
-  <script src="JS/scripts.js"></script>
+<body>
+  <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <span class="container-fluid">
+        <a class="navbar-brand" href="index.html">Cheeasy</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <span class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <span class="navbar-nav">
+            <a class="nav-link active" aria-current="page" href="mailto:calemasanga@gmail.com">Contact Us</a>
+          </span>
+        </span>
+      </span>
+    </nav>
+    <div id="banner">
+      <h1>Welcome to Cheeasy Pizza Place</h1>
+      <hi id="testOutput"></hi>
+    </div>
+    <div id="order">
+      <h2>Place your Order</h2>
+    </div>
+    <form id="pizzaorder">
+      <div class="collect">
+        <label for="Size">Select Your Size:</label>
+        <select name="size" id="size" class="select-group">
+          <optgroup label="Available sizes">
+            <option>select size</option>
+            <option value="small">Small</option>
+            <option value="medium">Medium</option>
+            <option value="large">Large</option>
+          </optgroup>
+        </select><br>
+      </div>
+      <div class="collect">
+        <label for="Topping">Choose your Toppings:</label><br>
+        Chicken<input type="radio" name="topping" id="topping" value="chicken">
+        Beef<input type="radio" name="topping" id="topping" value="beef">
+        Pork<input type="radio" name="topping" id="topping" value="pork"><br>
+      </div>
+      <div class="collect">
+        <label for="Size" class="">What Crust do you like</label>
+        <select name="crust" id="crust" class="select-group">
+          <optgroup label="crust types">
+            <option>Choose crust type</option>
+            <option value="crisp">Crisp</option>
+            <option value="stuffed">Stuffed</option>
+            <option value="glutenFree">Gluten-Free</option>
+          </optgroup>
+        </select><br>
+      </div>
+      <button type="submit" class="seeSummary">SUBMIT</button>
+    </form>
+    <form id="addPopup">
+      <p>Order Received!</p>
+      <p>Add another one?</p>
+      <div id="anotherOne">
+        Yes<a href="#location"><input type="radio" name="anotherOrder" id="anotherOrder" value="addYes">
+        [No<input type="radio" name="anotherOrder" id="anotherOrder" value="addNo">]
+        <span class="error">Please select an option</span></a>
+      </div>
+    </form>
+    <div id="anotherOrder"></div>
+    <form id="selectDelivery">
+      <div id="delivery">
+        <h3>Would you like it delivered to your place at 350/=?</h3>
+        <label><input type="radio" name="delivery" id="delivery" value="delivery">Yes</label>
+        <label><input type="radio" name="delivery" id="delivery" value="no-delivery" checked>No</label><br>
+        <span class="location">Enter your Location<input type="text" name="location" id="location"></span>
+      <a href="#footer"><button type="submit" id="checkout">Checkout</button></a>
+    </div>
+    </form>
+
+    </form>
+    <div id="orderSummary"></div>
+    <div id="deliveryDetails"></div>
+    <div id="totalAmount"></div>
+    <div id="footer">
+      <a href="#orderSummary"><button type="button" id="seeOrder">SEE ORDER</button></a>
+      <p class="thankyou">Thank you for shopping with us..</p>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="JS/scripts.js"></script>
+  </div>
 </body>
+
 </html>
