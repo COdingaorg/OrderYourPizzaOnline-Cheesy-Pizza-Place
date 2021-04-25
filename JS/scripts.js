@@ -98,6 +98,7 @@ $(document).ready(function () {
         '<h5>Toppings: </h5><p>' + pizzaSelect.pizzaTopping() + '</p>' +
         '<h5>Crust Type: </h5><p>' + pizzaSelect.pizzaCrust() + '</p>' +
         '<h4>SUB-TOTAL</h4><p>'+ pizzaSelect.pizzaTotal()+'</p></div>')
+        $('.seeSummary').hide()
     }
     //show popup for adding another order
     $('#addPopup').show();
@@ -107,6 +108,7 @@ $(document).ready(function () {
         $('#addPopup').hide();
         $('input#anotherOrder').trigger('reset');
         $('#pizzaorder').trigger('reset');
+        $('.seeSummary').show()
         return locStatement = '<p>Your Delivery will be done to : '
         
       } else if (anotherAns == 'addNo') {
@@ -122,6 +124,7 @@ $(document).ready(function () {
       var delivery = $('input[name="delivery"]:checked').val();
       var deliveryPrice = function () {
         if (delivery == 'delivery') {
+          $('.location input').css('border','2px solid red')
           return 350
         } else if (delivery == 'no-delivery') {
           $('.location').hide()
