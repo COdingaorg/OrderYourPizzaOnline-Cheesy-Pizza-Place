@@ -28,49 +28,56 @@
     </nav>
     <div id="banner">
       <h1>Welcome to Cheeasy Pizza Place</h1>
-      <hi id="testOutput"></hi>
     </div>
     <div id="order">
       <h2>Place your Order</h2>
+    </div><hr>
+    <div id="display">
+      <div id="section1">
+        <img src="/images/pizzadough.jpg" alt="Pizza Dough">
+      </div>
+      <form id="pizzaorder">
+        <div class="collect">
+          <label for="Size">Select Your Size:</label>
+          <select name="size" id="size" class="select-group">
+            <optgroup label="Available sizes">
+              <option>select size</option>
+              <option value="small">Small</option>
+              <option value="medium">Medium</option>
+              <option value="large">Large</option>
+            </optgroup>
+          </select><br>
+        </div>
+        <div class="collect">
+          <label for="Topping">Choose your Toppings:</label><br>
+          Chicken<input type="radio" name="topping" id="topping" value="chicken">
+          Beef<input type="radio" name="topping" id="topping" value="beef">
+          Pork<input type="radio" name="topping" id="topping" value="pork"><br>
+        </div>
+        <div class="collect">
+          <label for="Size" class="">What Crust do you like</label>
+          <select name="crust" id="crust" class="select-group">
+            <optgroup label="crust types">
+              <option>Choose crust type</option>
+              <option value="crisp">Crisp</option>
+              <option value="stuffed">Stuffed</option>
+              <option value="glutenFree">Gluten-Free</option>
+            </optgroup>
+          </select><br>
+        </div>
+        <button type="submit" class="seeSummary">SUBMIT</button>
+      </form>
+      <div id="section2">
+        <img src="/images/pizzaupclose.jpg" alt="Pizza Upclose">
+      </div>
     </div>
-    <form id="pizzaorder">
-      <div class="collect">
-        <label for="Size">Select Your Size:</label>
-        <select name="size" id="size" class="select-group">
-          <optgroup label="Available sizes">
-            <option>select size</option>
-            <option value="small">Small</option>
-            <option value="medium">Medium</option>
-            <option value="large">Large</option>
-          </optgroup>
-        </select><br>
-      </div>
-      <div class="collect">
-        <label for="Topping">Choose your Toppings:</label><br>
-        Chicken<input type="radio" name="topping" id="topping" value="chicken">
-        Beef<input type="radio" name="topping" id="topping" value="beef">
-        Pork<input type="radio" name="topping" id="topping" value="pork"><br>
-      </div>
-      <div class="collect">
-        <label for="Size" class="">What Crust do you like</label>
-        <select name="crust" id="crust" class="select-group">
-          <optgroup label="crust types">
-            <option>Choose crust type</option>
-            <option value="crisp">Crisp</option>
-            <option value="stuffed">Stuffed</option>
-            <option value="glutenFree">Gluten-Free</option>
-          </optgroup>
-        </select><br>
-      </div>
-      <button type="submit" class="seeSummary">SUBMIT</button>
-    </form>
     <form id="addPopup">
       <p>Order Received!</p>
       <p>Add another one?</p>
       <div id="anotherOne">
-        Yes<a href="#location"><input type="radio" name="anotherOrder" id="anotherOrder" value="addYes">
-        [No<input type="radio" name="anotherOrder" id="anotherOrder" value="addNo">]
-        <span class="error">Please select an option</span></a>
+        <label>Yes<a href="#location"><input type="radio" name="anotherOrder" id="anotherOrder" value="addYes"></label>
+          <label>[No<input type="radio" name="anotherOrder" id="anotherOrder" value="addNo">]</label>
+          <span class="error">Please select an option</span></a>
       </div>
     </form>
     <div id="anotherOrder"></div>
@@ -80,8 +87,8 @@
         <label><input type="radio" name="delivery" id="delivery" value="delivery">Yes</label>
         <label><input type="radio" name="delivery" id="delivery" value="no-delivery" checked>No</label><br>
         <span class="location">Enter your Location<input type="text" name="location" id="location"></span>
-      <a href="#footer"><button type="submit" id="checkout">Checkout</button></a>
-    </div>
+        <a href="#footer"><button type="submit" id="checkout">Checkout</button></a>
+      </div>
     </form>
 
     </form>
