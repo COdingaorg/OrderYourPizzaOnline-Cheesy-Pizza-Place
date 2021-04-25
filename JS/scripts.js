@@ -91,7 +91,7 @@ $(document).ready(function () {
 
 
     //show order to HTML
-    if (pizzaSelect.Size == 'select size' || pizzaSelect.pizzaCrust() == 'Choose crust type') {
+    if (pizzaSelect.Size == 'select size' || pizzaSelect.pizzaCrust() == 'Choose crust type'||pizzaSelect.pizzaTopping()==null) {
       alert('Select a valid option');
     }else{
       $('#orderSummary').append('<div class="summaries"><h5>Pizza Selected : </h5><p>' + pizzaSelect.Size + '</p>' +

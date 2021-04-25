@@ -1,3 +1,12 @@
+/*Color CSS*/
+/* Color Theme Swatches in RGBA */
+.pizza-1-rgba { color: rgba(114, 2, 22, 1); }
+.pizza-2-rgba { color: rgba(242, 159, 4, 1); }
+.pizza-3-rgba { color: rgba(216, 121, 4, 1); }
+.pizza-4-rgba { color: rgba(242, 91, 4, 1); }
+.pizza-5-rgba { color: rgba(191, 3, 3, 1); }
+/*Fonts*/
+
 /*styling first option of select group*/
 .select-group:focus option:first-of-type{
   display: none;
@@ -5,4 +14,28 @@
 /*hide delivery selection*/
 #selectDelivery, .error, #addPopup, #seeOrder, .thankyou{
   display: none;
+}
+/*styling banner*/
+#banner, #order{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#banner{
+  width: 100vw;
+  height: 50vh;
+}
+#pizzaorder{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+}
+#pizzaorder>*{
+  margin-bottom: 2%;
+}
+#addPopup{
+  position: relative;
+  border: 1px;
 }
