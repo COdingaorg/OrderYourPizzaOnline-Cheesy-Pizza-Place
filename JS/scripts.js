@@ -36,7 +36,9 @@ Pizza.prototype.pizzaTopping = function () {
   return (this.Toppings[0].Name)
 }
 //user Logic
+//declaring global variables
 var locStatement = '';
+var pizzaChosenPrice = 0;
 $(document).ready(function () {
   $('form#pizzaorder').submit(function (event) {
     event.preventDefault();
@@ -45,7 +47,7 @@ $(document).ready(function () {
     var pizzatopping = $('input[name="topping"]:checked').val();
     var pizzacrust = $('select#crust').val();
     //determine crust price
-    var crustPrice = function () {
+    var crustPrice = function(){
       if (pizzacrust == 'crisp') {
         return 120
       } else if (pizzacrust == 'stuffed') {
@@ -81,12 +83,21 @@ $(document).ready(function () {
       }
     }
     var pizzaSelect = new Pizza(pizzasize, pizzaPrice());
-
+    
     //add toppings and crust objects to Pizza object
     pizzaSelect.Toppings.push(toppingSelect);
     pizzaSelect.Crusts.push(crustSelect);
     pizzaSelect.Total = (pizzaSelect.pizzaTotal())
 
+    //adding selected pizza price to pizzaChosenArray
+    pizzaChosenPrice+=pizzaSelect.Total
+    // var pizzaChosen = function(){
+    //   return pizzaChosenPrice+=pizzaSelect.Total
+    // }
+    console.log(pizzaChosenPrice);
+    
+    $('#calculator').append('<p>Order: '+pizzaChosenPrice+'</p>');
+    $('#calculator p').first().remove();
     //show order to HTML
     if (pizzaSelect.Size == 'select size' || pizzaSelect.pizzaCrust() == 'Choose crust type' || pizzaSelect.pizzaTopping() == null) {
       alert('Select a valid option');
@@ -134,7 +145,7 @@ $(document).ready(function () {
     }
     //incase of multiple pizza orders, find a total price for all pizzas
 
-    var totalAmount = /*(pizzaSelect.pizzaTotal())*/0+deliveryPrice();
+    var totalAmount = pizzaChosenPrice+deliveryPrice();
     var location = $('input#location').val();
     //checking if location is added
     if (delivery == 'delivery' && (location == null || location == '')) {
