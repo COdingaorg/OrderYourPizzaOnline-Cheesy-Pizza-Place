@@ -129,11 +129,6 @@ nav.navbar {
 .collect {
   margin-bottom: 2%;
 }
-
-#topping {
-  width: 100%;
-}
-
 #section1 img,
 #section2 img {
   border: 3px solid rgba(216, 121, 4, 1);
@@ -146,16 +141,12 @@ nav.navbar {
 
 #section1 img {
   width: 300px;
+  
 }
 
 #section2 img {
   width: 250px;
 }
-
-#topping {
-  margin: 2%;
-}
-
 hr {
   box-shadow: 2px 2px 3px black;
 }
@@ -218,7 +209,19 @@ select,
   flex-wrap: wrap;
 
 }
-
+#calculator{
+  font-family: PierSans;
+  font-weight: medium;
+  border: 2px solid rgba(242, 159, 4, 1);
+  background-color: rgba(216, 121, 4, .2);
+  width: 100px;
+  height: 30px;
+  padding-top: 2px;
+  float: right;
+  text-align: center;
+  border-radius: 10px 0 0 10px;
+  margin-top: 30px;
+}
 .summaries {
   border: 1px solid black;
   border-radius: 5px 5px 0px 0px;
