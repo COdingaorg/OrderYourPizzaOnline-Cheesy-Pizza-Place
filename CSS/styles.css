@@ -214,13 +214,14 @@ select,
   font-weight: medium;
   border: 2px solid rgba(242, 159, 4, 1);
   background-color: rgba(216, 121, 4, .2);
-  width: 100px;
+  width: 10%;
   height: 30px;
   padding-top: 2px;
   float: right;
   text-align: center;
   border-radius: 10px 0 0 10px;
   margin-top: 30px;
+  font-size: 100%;
 }
 .summaries {
   border: 1px solid black;

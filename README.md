@@ -26,7 +26,7 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 Please make sure to update tests as appropriate.
 
 ## Website's link
-[view Live click Here]:https://calebodinga.github.io/Week4-PizzaOrderingWebsite/
+view Live click Here: https://calebodinga.github.io/Week4-PizzaOrderingWebsite/
 
 ## License
 This Website uses MIT LICENSE. For more Read License.
