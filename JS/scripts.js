@@ -86,7 +86,7 @@ $(document).ready(function () {
     pizzaSelect.Toppings.push(toppingSelect);
     pizzaSelect.Crusts.push(crustSelect);
     pizzaSelect.Total = (pizzaSelect.pizzaTotal())
-    
+
     //show order to HTML
     if (pizzaSelect.Size == 'select size' || pizzaSelect.pizzaCrust() == 'Choose crust type' || pizzaSelect.pizzaTopping() == null) {
       alert('Select a valid option');
@@ -119,11 +119,9 @@ $(document).ready(function () {
     var deliveryPrice = function () {
       if (delivery == 'delivery') {
         $('.location input').css('border', '2px solid red')
-        locStatement += '<p>Your Delivery will be done to : '
         return 350
       } else if (delivery == 'no-delivery') {
         $('.location').hide()
-        locStatement += '<p>Your Order will be ready '
         return 0
       }
     }
@@ -136,7 +134,7 @@ $(document).ready(function () {
     }
     //incase of multiple pizza orders, find a total price for all pizzas
 
-    var totalAmount = ($('.summaries[0] :last-child()'));
+    var totalAmount = /*(pizzaSelect.pizzaTotal())*/0+deliveryPrice();
     var location = $('input#location').val();
     //checking if location is added
     if (delivery == 'delivery' && (location == null || location == '')) {
@@ -146,7 +144,6 @@ $(document).ready(function () {
     $('#deliveryDetails').append(locStatements() + '<h3>' + location + '</h3>in 30 minutes</p>' +
                                   '<p> Delivery cost : ' + deliveryPrice() + '</p>')
     $('#totalAmount').append('<h1>TOTAL AMOUNT :' + totalAmount + '</h1>')
-    console.log(locStatements())
     $('#checkout').hide();
     $('#seeOrder').show();
     $('.thankyou').show();
